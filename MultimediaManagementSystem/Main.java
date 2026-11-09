@@ -1,13 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        MediaItem proxy = new VirtualMediaProxy("Undertale OST", 180);
+        System.out.println("=== Remote Proxy ===");
 
-        System.out.println("Virtual Proxy created.");
+        RealMedia remoteMedia = new RealMedia("Undertale OST", 180);
+        MediaItem remoteProxy = new RemoteMediaProxy(remoteMedia);
 
-        System.out.println("Title: " + proxy.getTitle());
-        System.out.println("Duration: " + proxy.getDuration() + " seconds");
+        remoteProxy.getTitle();
+        remoteProxy.getDuration();
+        remoteProxy.play();
+        remoteProxy.play();
 
-        proxy.play();
-        proxy.play();
+        System.out.println("\n=== Virtual Proxy ===");
+
+        MediaItem virtualProxy = new VirtualMediaProxy("Deltarune OST", 240);
+
+        virtualProxy.getTitle();
+        virtualProxy.getDuration();
+        virtualProxy.play();
+        virtualProxy.play();
     }
 }
