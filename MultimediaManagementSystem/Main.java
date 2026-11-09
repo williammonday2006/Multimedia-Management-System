@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        RealMedia media = new RealMedia("Undertale OST", 180);
+        MediaItem proxy = new VirtualMediaProxy("Undertale OST", 180);
 
-        MediaItem proxy = new RemoteMediaProxy(media);
+        System.out.println("Virtual Proxy created.");
 
         System.out.println("Title: " + proxy.getTitle());
         System.out.println("Duration: " + proxy.getDuration() + " seconds");
